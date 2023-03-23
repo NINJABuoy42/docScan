@@ -7,19 +7,21 @@ if (navigator.mediaDevices.getUserMedia) {
   });
 }
 let rotate = 0;
+let zoom=0
 document.getElementById('slideZoom').oninput = function(){
-video.style.transform="scale("+this.value/50+")";
+  zoom = this.value / 50;
+video.style.transform="scale("+zoom+") rotate("+rotate+"deg)";
 }
 document.getElementById("video").addEventListener("click",()=>{
   document.getElementById("controls").classList.toggle("show");
 })
 document.getElementById("rotateR").addEventListener("click",()=>{
-  rotate=rotate+10;
-  video.style.transform +="rotate("+rotate+"deg)";
+  rotate = rotate + 90;
+  video.style.transform += "scale(" + zoom + ") rotate(" + rotate + "deg)";
 })
 document.getElementById("rotateL").addEventListener("click",()=>{
-  rotate=rotate-10
-  video.style.transform +="rotate("+rotate+"deg)";
+  rotate = rotate - 90
+  video.style.transform += "scale(" + zoom  + ") rotate(" + rotate + "deg)";
 })
 for (let i = 0; i < d.length; i++) {
   d[i].style.position = "relative";
