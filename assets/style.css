@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+    font-family:sans-serif;
+  font-size: 20px;
 }
 .container {
   position: absolute;
@@ -16,6 +18,15 @@ video{
   top: 0;
   bottom: 0;
   margin: auto auto;
+  display: none;
+}
+#img{
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  margin: auto auto;
+  display: none;
 }
 .controls{
   position: absolute;
@@ -64,4 +75,100 @@ video{
 
 .show{
   visibility: hidden;
+}
+.modalContainer {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.5);
+  top: 0;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  display: none;
+  z-index: 999;
+  overflow: none;
+}
+.modal{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  box-shadow: 0 0 10px 10px rgba(0,0,0,0.2);
+  top: 0;bottom: 0;
+  left: 0;right: 0;
+  width:400px;
+  height: fit-content;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  margin: auto auto;
+  gap: 1rem;
+}
+.modalHead{
+  height: 20%;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 0 1px 5px 0px rgba(0,0,0,0.5);
+}
+.modalHead span{
+  /* font-family:sans-serif; */
+  font-size: 20px;
+}
+.modalAction{
+  height: 20%;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0 -1px 5px 0px rgba(0,0,0,0.5);
+}
+.modalAction button{
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+.modalAction button:hover{
+  box-shadow: 0 1px 5px 0px rgba(0,0,0,0.5);
+  transform: scale(1.05);
+}
+.modalAction button:first-child{
+  background-color: rgb(42, 121, 217);
+  color: white;
+}
+
+.modalContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+#source{
+  outline: rgb(75, 142, 224);
+  height: 30px;
+  border-radius: 5px;
+
+
+
+}
+#source:focus{
+  border: 2px solid  rgb(75, 142, 224);
+}
+#cp{
+  margin-bottom: 0.5rem;
+    display: none;
+}
+#capture{
+display: none;
+}
+.showM{
+  display: block;
 }
